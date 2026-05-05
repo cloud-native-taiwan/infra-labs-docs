@@ -1,0 +1,192 @@
+/* ============================================================
+   CNTUG → Infima bridge
+   Maps the CNTUG design tokens (`cntug-tokens.css`) onto the
+   Infima CSS variables Docusaurus uses, so the existing theme
+   (navbar, sidebar, footer, buttons, code blocks, admonitions)
+   adopts the CNCF brand without per-component overrides.
+
+   Drop this file into any Docusaurus site after `cntug-tokens.css`
+   and it will rebrand the theme.
+   ============================================================ */
+
+:root {
+  /* ---- Primary (CNCF Blue scale) ---- */
+  --ifm-color-primary:         var(--blue-500);
+  --ifm-color-primary-dark:    var(--blue-600);
+  --ifm-color-primary-darker:  var(--blue-700);
+  --ifm-color-primary-darkest: var(--blue-800);
+  --ifm-color-primary-light:   var(--blue-400);
+  --ifm-color-primary-lighter: var(--blue-300);
+  --ifm-color-primary-lightest: var(--blue-200);
+
+  /* ---- Type ---- */
+  --ifm-font-family-base:      var(--font-sans);
+  --ifm-heading-font-family:   var(--font-display);
+  --ifm-font-family-monospace: var(--font-mono);
+  --ifm-heading-font-weight:   var(--fw-bold);
+  --ifm-font-weight-bold:      var(--fw-bold);
+  --ifm-font-weight-semibold:  var(--fw-semibold);
+  --ifm-heading-line-height:   var(--lh-snug);
+
+  /* ---- Surfaces & content ---- */
+  --ifm-background-color:         var(--bg);
+  --ifm-background-surface-color: var(--bg);
+  --ifm-color-content:            var(--fg);
+  --ifm-color-content-secondary:  var(--fg-muted);
+
+  /* ---- Borders / emphasis greys ---- */
+  --ifm-color-emphasis-0:   var(--neutral-0);
+  --ifm-color-emphasis-100: var(--neutral-50);
+  --ifm-color-emphasis-200: var(--neutral-100);
+  --ifm-color-emphasis-300: var(--neutral-200);
+  --ifm-color-emphasis-400: var(--neutral-300);
+  --ifm-color-emphasis-500: var(--neutral-400);
+  --ifm-color-emphasis-600: var(--neutral-500);
+  --ifm-color-emphasis-700: var(--neutral-600);
+  --ifm-color-emphasis-800: var(--neutral-700);
+  --ifm-color-emphasis-900: var(--neutral-800);
+  --ifm-color-emphasis-1000: var(--neutral-900);
+  --ifm-toc-border-color:   var(--border);
+  --ifm-hr-border-color:    var(--border);
+
+  /* ---- Code ---- */
+  --ifm-code-font-size:    92%;
+  --ifm-code-background:   var(--bg-muted);
+  --ifm-code-padding-vertical:   0.1em;
+  --ifm-code-padding-horizontal: 0.4em;
+  --ifm-code-border-radius:      var(--radius-sm);
+  --ifm-pre-background:    var(--neutral-900);
+  --ifm-pre-color:         var(--cncf-turquoise);
+  --ifm-pre-border-radius: var(--radius-md);
+  --docusaurus-highlighted-code-line-bg: rgba(0, 134, 255, 0.10);
+
+  /* ---- Status (admonitions) ---- */
+  --ifm-color-success:        var(--success);
+  --ifm-color-success-contrast-background: var(--success-soft);
+  --ifm-color-warning:        var(--warning);
+  --ifm-color-warning-contrast-background: var(--warning-soft);
+  --ifm-color-danger:         var(--danger);
+  --ifm-color-danger-contrast-background:  var(--danger-soft);
+  /* Info = teal-cyan, intentionally distinct from --cncf-blue so .button--info
+     never collides with .hero--primary or any CNCF-Blue surface. */
+  --ifm-color-info:              var(--info);
+  --ifm-color-info-dark:         #0995AC;
+  --ifm-color-info-darker:       #088CA2;
+  --ifm-color-info-darkest:      #07748B;
+  --ifm-color-info-light:        #1FBDD3;
+  --ifm-color-info-lighter:      #2EC5DA;
+  --ifm-color-info-lightest:     #57D2E2;
+  --ifm-color-info-contrast-background: var(--info-soft);
+  --ifm-color-info-contrast-foreground: #07748B;
+
+  /* ---- Misc ---- */
+  --ifm-hero-background-color: var(--cncf-blue);
+  --ifm-link-color:        var(--fg-brand);
+  --ifm-link-hover-color:  var(--accent-hover);
+  --ifm-navbar-background-color: color-mix(in srgb, var(--bg) 85%, transparent);
+  --ifm-navbar-shadow:           0 1px 0 var(--border);
+  --ifm-footer-background-color: var(--cncf-black);
+  --ifm-footer-color:            var(--cncf-white);
+  --ifm-footer-link-color:       var(--neutral-300);
+  --ifm-footer-title-color:      var(--cncf-turquoise);
+
+  /* ---- Container radii ---- */
+  --ifm-button-border-radius: var(--radius-md);
+  --ifm-card-border-radius:   var(--radius-lg);
+  --ifm-global-radius:        var(--radius-md);
+  --ifm-alert-border-radius:  var(--radius-md);
+}
+
+[data-theme='dark'] {
+  /* Primary shifts to the desaturated CNCF Blue from cntug-tokens.css */
+  --ifm-color-primary:          #4DA8FF;
+  --ifm-color-primary-dark:     #2E97FF;
+  --ifm-color-primary-darker:   #1F8FFF;
+  --ifm-color-primary-darkest:  #0086FF;
+  --ifm-color-primary-light:    #6FB8FF;
+  --ifm-color-primary-lighter:  #80C2FF;
+  --ifm-color-primary-lightest: #A8D5FF;
+
+  /* Info: teal — distinct from hero (#4DA8FF) and --cncf-blue on dark surfaces */
+  --ifm-color-info:              #4DD3E8;
+  --ifm-color-info-dark:         #2EC5DA;
+  --ifm-color-info-darker:       #1FBDD3;
+  --ifm-color-info-darkest:      #0AA8C0;
+  --ifm-color-info-light:        #6FDBED;
+  --ifm-color-info-lighter:      #80E0F0;
+  --ifm-color-info-lightest:     #A8EBF5;
+
+  --ifm-background-color:         var(--bg);
+  --ifm-background-surface-color: var(--bg-subtle);
+  --ifm-color-content:            var(--fg);
+  --ifm-color-content-secondary:  var(--fg-muted);
+
+  --ifm-toc-border-color: var(--border);
+  --ifm-hr-border-color:  var(--border);
+
+  --ifm-code-background:  var(--bg-muted);
+  --ifm-pre-background:   #0A0A0A;
+  --ifm-pre-color:        var(--cncf-turquoise);
+
+  --ifm-link-color:       var(--fg-brand);
+  --ifm-link-hover-color: var(--accent-hover);
+
+  --docusaurus-highlighted-code-line-bg: rgba(77, 168, 255, 0.18);
+}
+
+/* ============================================================
+   Targeted refinements that Infima vars don't reach
+   ============================================================ */
+
+/* Brand-blue focus ring everywhere */
+:where(a, button, [role='button'], input, select, textarea, summary):focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+  border-radius: var(--radius-sm);
+}
+
+/* Eyebrow utility — CNCF-blue tracked-out small caps (use on intro labels) */
+.eyebrow {
+  display: inline-block;
+  font-size: var(--fs-12);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  color: var(--fg-brand);
+}
+
+/* Display headings get the brand letter-spacing tightening */
+.markdown h1,
+.markdown h2 { letter-spacing: var(--tracking-tight); }
+
+/* Body prose width follows the design system's reading rhythm */
+.markdown { text-wrap: pretty; }
+
+/* Sponsor / emphasis tag (used on community pages) */
+.button--sponsor {
+  --ifm-color-primary:         var(--cncf-pink);
+  --ifm-color-primary-dark:    #BF1F84;
+  --ifm-color-primary-darker:  #B41D7D;
+  --ifm-color-primary-darkest: #941867;
+  --ifm-color-primary-light:   #DD3FA1;
+  --ifm-color-primary-lighter: #E150A9;
+  --ifm-color-primary-lightest: #E978BC;
+}
+[data-theme='dark'] .button--sponsor {
+  --ifm-color-primary:          var(--cncf-pink);
+  --ifm-color-primary-dark:     #ED85C2;
+  --ifm-color-primary-darker:   #F19BCD;
+  --ifm-color-primary-darkest:  #F7C2DF;
+  --ifm-color-primary-light:    #ED85C2;
+  --ifm-color-primary-lighter:  #F19BCD;
+  --ifm-color-primary-lightest: #F7C2DF;
+}
+
+/* Docusaurus derives .hero--primary background from --ifm-color-primary,
+   not --ifm-hero-background-color (which is not a real Infima variable).
+   In dark mode --ifm-color-primary is #4DA8FF which makes the hero look
+   washed out. Pin it directly to blue-800 instead. */
+[data-theme='dark'] .hero--primary {
+  background-color: #003566 !important;
+  color: #FFFFFF;
+}

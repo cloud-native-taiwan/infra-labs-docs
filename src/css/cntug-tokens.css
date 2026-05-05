@@ -1,0 +1,300 @@
+/* ============================================================
+   CNTUG Design System — design tokens
+   Cloud Native Taiwan User Group
+   Built on the official CNCF brand palette.
+
+   Source of truth: colors, type, spacing, radii, shadows, motion.
+   This file defines CSS custom properties only — no element rules —
+   so it can be dropped into any project (Docusaurus, plain HTML,
+   React, etc.) without conflicting with the host stylesheet.
+
+   Pair with `cntug-infima.css` when used inside Docusaurus.
+   See `src/css/README.md` for reproduction instructions.
+   ============================================================ */
+
+/* ---------- Webfonts ----------
+   Clarity City — CNCF's official typeface (VMware Clarity Design System, OFL).
+   @font-face blocks below load only the font files; no Clarity component CSS is imported. */
+/* Noto Sans TC — Traditional Chinese (primary language for CNTUG). */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap");
+/* JetBrains Mono — code, terminal, kubectl examples. */
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap");
+
+@font-face {
+  font-family: "Clarity City";
+  font-weight: 400;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/npm/@clr/ui@17.12.2/dist/Regular/ClarityCityRegular.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Clarity City";
+  font-weight: 500;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/npm/@clr/ui@17.12.2/dist/Medium/ClarityCityMedium.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Clarity City";
+  font-weight: 600;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/npm/@clr/ui@17.12.2/dist/SemiBold/ClarityCitySemiBold.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Clarity City";
+  font-weight: 700;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/npm/@clr/ui@17.12.2/dist/Bold/ClarityCityBold.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Clarity City";
+  font-weight: 800;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/npm/@clr/ui@17.12.2/dist/ExtraBold/ClarityCityExtraBold.woff2") format("woff2");
+  font-display: swap;
+}
+
+:root {
+  /* ============================================================
+     COLORS — Official CNCF palette
+     ============================================================ */
+
+  /* Primary brand */
+  --cncf-blue:      #0086FF;  /* CNCF Blue       — pantone 285C */
+  --cncf-black:     #000000;  /* CNCF Black      — pantone Black C */
+
+  /* Secondary */
+  --cncf-turquoise: #93EAFF;  /* CNCF Turquoise  — pantone 2995C */
+  --cncf-pink:      #D62293;  /* CNCF Pink       — pantone 213C */
+  --cncf-stone:     #E5E5E5;  /* CNCF Stone      — warm grey 1C */
+  --cncf-white:     #FFFFFF;  /* CNCF Cloud White */
+
+  /* Tints / shades extending CNCF Blue */
+  --blue-50:   #E6F3FF;
+  --blue-100:  #CCE7FF;
+  --blue-200:  #99CFFF;
+  --blue-300:  #66B7FF;
+  --blue-400:  #339FFF;
+  --blue-500:  #0086FF;
+  --blue-600:  #006BCC;
+  --blue-700:  #005099;
+  --blue-800:  #003566;
+  --blue-900:  #001A33;
+
+  /* Neutrals (warm, derived from CNCF Stone) */
+  --neutral-0:    #FFFFFF;
+  --neutral-50:   #FAFAFA;
+  --neutral-100:  #F4F4F5;
+  --neutral-200:  #E5E5E5;
+  --neutral-300:  #D4D4D4;
+  --neutral-400:  #A3A3A3;
+  --neutral-500:  #737373;
+  --neutral-600:  #525252;
+  --neutral-700:  #404040;
+  --neutral-800:  #262626;
+  --neutral-900:  #0A0A0A;
+
+  /* Semantic — surfaces */
+  --bg:           var(--neutral-0);
+  --bg-subtle:    var(--neutral-50);
+  --bg-muted:     var(--neutral-100);
+  --bg-inverse:   var(--cncf-black);
+
+  /* Semantic — foregrounds */
+  --fg:           var(--neutral-900);
+  --fg-muted:     var(--neutral-600);
+  --fg-subtle:    var(--neutral-500);
+  --fg-inverse:   var(--cncf-white);
+  --fg-brand:     var(--cncf-blue);
+
+  /* Semantic — borders */
+  --border:        var(--neutral-200);
+  --border-strong: var(--neutral-300);
+  --border-brand:  var(--cncf-blue);
+
+  /* Semantic — accents */
+  --accent:        var(--cncf-blue);
+  --accent-hover:  var(--blue-600);
+  --accent-press:  var(--blue-700);
+  --accent-soft:   var(--blue-50);
+
+  /* Status */
+  --success:       #16A34A;
+  --success-soft:  #DCFCE7;
+  --warning:       #EAB308;
+  --warning-soft:  #FEF9C3;
+  --danger:        #DC2626;
+  --danger-soft:   #FEE2E2;
+  /* Info is a STATUS hue, intentionally distinct from --cncf-blue (the CTA / brand
+     accent) so that Infima's .button--info never collides with .hero--primary. */
+  --info:          #0AA8C0;
+  --info-soft:     #E0F7FB;
+
+  /* Shadows — tinted toward CNCF deep blue ("blueprint", not grey) */
+  --shadow-xs: 0 1px 2px rgba(0, 26, 51, 0.06);
+  --shadow-sm: 0 2px 4px rgba(0, 26, 51, 0.06), 0 1px 2px rgba(0, 26, 51, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 26, 51, 0.08), 0 2px 4px rgba(0, 26, 51, 0.04);
+  --shadow-lg: 0 12px 32px rgba(0, 26, 51, 0.10), 0 4px 8px rgba(0, 26, 51, 0.04);
+  --shadow-xl: 0 24px 48px rgba(0, 26, 51, 0.14);
+  --shadow-focus: 0 0 0 3px rgba(0, 134, 255, 0.35);
+
+  /* ============================================================
+     TYPOGRAPHY
+     Clarity City wins on Latin glyphs (CNCF brand);
+     Noto Sans TC handles Traditional Chinese.
+     ============================================================ */
+  --font-sans:    "Clarity City", "Noto Sans TC", -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+  --font-display: "Clarity City", "Noto Sans TC", -apple-system, system-ui, sans-serif;
+  --font-tc:      "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --font-mono:    "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+
+  --fs-12:  0.75rem;
+  --fs-14:  0.875rem;
+  --fs-16:  1rem;
+  --fs-18:  1.125rem;
+  --fs-20:  1.25rem;
+  --fs-24:  1.5rem;
+  --fs-30:  1.875rem;
+  --fs-36:  2.25rem;
+  --fs-48:  3rem;
+  --fs-60:  3.75rem;
+  --fs-72:  4.5rem;
+
+  --lh-tight:   1.1;
+  --lh-snug:    1.25;
+  --lh-normal:  1.5;
+  --lh-relaxed: 1.65;
+
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+  --fw-black:    800;
+
+  --tracking-tight:  -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.04em;
+  --tracking-wider:  0.08em;
+
+  /* ============================================================
+     SPACING / RADII / MOTION
+     ============================================================ */
+  --space-0:  0;
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  96px;
+  --space-10: 128px;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-pill: 999px;
+
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-decel:    cubic-bezier(0, 0, 0.2, 1);
+  --ease-accel:    cubic-bezier(0.4, 0, 1, 1);
+  --dur-fast: 120ms;
+  --dur-base: 180ms;
+  --dur-slow: 320ms;
+}
+
+/* ============================================================
+   DARK THEME — Apple HIG-inspired
+   - Layered grays, not pure black (depth via elevation, not contrast).
+   - CNCF Blue lifted to #4DA8FF so it stays legible without buzzing.
+   - Foregrounds use iOS label tiers (90% / 60% / 38%).
+   - Borders are luminance-up, not opacity-down.
+
+   Activated by `[data-theme="dark"]` (Docusaurus convention)
+   or `.theme-dark` (manual opt-in).
+   ============================================================ */
+[data-theme="dark"], .theme-dark {
+  color-scheme: dark;
+
+  --bg:            #1C1C1E;
+  --bg-subtle:     #232326;
+  --bg-muted:      #2C2C2E;
+  --bg-inverse:    #F2F2F7;
+
+  --fg:            rgba(235, 235, 245, 0.92);
+  --fg-muted:      rgba(235, 235, 245, 0.62);
+  --fg-subtle:     rgba(235, 235, 245, 0.40);
+  --fg-inverse:    #1C1C1E;
+  --fg-brand:      #4DA8FF;
+
+  --border:        rgba(235, 235, 245, 0.10);
+  --border-strong: rgba(235, 235, 245, 0.18);
+  --border-brand:  #4DA8FF;
+
+  --cncf-blue:     #4DA8FF;
+  --cncf-turquoise:#9FE9FF;
+  --cncf-pink:     #E96FB7;
+
+  --blue-50:   rgba(77, 168, 255, 0.10);
+  --blue-100:  rgba(77, 168, 255, 0.16);
+  --blue-200:  rgba(77, 168, 255, 0.28);
+  --blue-300:  #6FB8FF;
+  --blue-400:  #4DA8FF;
+  --blue-500:  #4DA8FF;
+  --blue-600:  #6FB8FF;
+  --blue-700:  #9FCBFF;
+  --blue-800:  #CCE2FF;
+  --blue-900:  #E6F0FF;
+
+  --accent:        var(--cncf-blue);
+  --accent-hover:  #6FB8FF;
+  --accent-press:  #9FCBFF;
+  --accent-soft:   rgba(77, 168, 255, 0.14);
+
+  --success:       #4ADE80;
+  --success-soft:  rgba(74, 222, 128, 0.14);
+  --warning:       #FACC15;
+  --warning-soft:  rgba(250, 204, 21, 0.14);
+  --danger:        #F87171;
+  --danger-soft:   rgba(248, 113, 113, 0.14);
+  --info:          #4DD3E8;
+  --info-soft:     rgba(77, 211, 232, 0.14);
+
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.35);
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.40), 0 1px 2px rgba(0,0,0,0.30);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.45), 0 2px 4px rgba(0,0,0,0.30);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.55), 0 4px 8px rgba(0,0,0,0.30);
+  --shadow-xl: 0 24px 48px rgba(0,0,0,0.60);
+  --shadow-focus: 0 0 0 3px rgba(77, 168, 255, 0.45);
+}
+
+/* Auto dark theme when user prefers it (still overridable via [data-theme=light]) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #1C1C1E; --bg-subtle: #232326; --bg-muted: #2C2C2E; --bg-inverse: #F2F2F7;
+    --fg: rgba(235,235,245,0.92); --fg-muted: rgba(235,235,245,0.62); --fg-subtle: rgba(235,235,245,0.40); --fg-inverse: #1C1C1E; --fg-brand: #4DA8FF;
+    --border: rgba(235,235,245,0.10); --border-strong: rgba(235,235,245,0.18); --border-brand: #4DA8FF;
+    --cncf-blue: #4DA8FF; --cncf-turquoise: #9FE9FF; --cncf-pink: #E96FB7;
+    --blue-50: rgba(77,168,255,0.10); --blue-100: rgba(77,168,255,0.16); --blue-200: rgba(77,168,255,0.28);
+    --blue-300: #6FB8FF; --blue-400: #4DA8FF; --blue-500: #4DA8FF; --blue-600: #6FB8FF; --blue-700: #9FCBFF; --blue-800: #CCE2FF; --blue-900: #E6F0FF;
+    --accent: #4DA8FF; --accent-hover: #6FB8FF; --accent-press: #9FCBFF; --accent-soft: rgba(77,168,255,0.14);
+    --success:#4ADE80; --success-soft:rgba(74,222,128,0.14);
+    --warning:#FACC15; --warning-soft:rgba(250,204,21,0.14);
+    --danger:#F87171;  --danger-soft:rgba(248,113,113,0.14);
+    --info:#4DD3E8; --info-soft:rgba(77,211,232,0.14);
+    --shadow-xs:0 1px 2px rgba(0,0,0,.35);
+    --shadow-sm:0 2px 4px rgba(0,0,0,.40),0 1px 2px rgba(0,0,0,.30);
+    --shadow-md:0 4px 12px rgba(0,0,0,.45),0 2px 4px rgba(0,0,0,.30);
+    --shadow-lg:0 12px 32px rgba(0,0,0,.55),0 4px 8px rgba(0,0,0,.30);
+    --shadow-xl:0 24px 48px rgba(0,0,0,.60);
+    --shadow-focus:0 0 0 3px rgba(77,168,255,.45);
+  }
+}
+
+::selection { background: var(--cncf-turquoise); color: var(--cncf-black); }
+[data-theme="dark"] ::selection { background: var(--cncf-turquoise); color: var(--cncf-black); }

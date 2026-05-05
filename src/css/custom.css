@@ -1,50 +1,13 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * Global styles for the CNTUG Infra Labs Docusaurus site.
+ *
+ * The visual system lives in two portable files:
+ *   - cntug-tokens.css   design tokens (colors, type, spacing, motion)
+ *   - cntug-infima.css   maps tokens onto Docusaurus / Infima variables
+ *
+ * Add site-specific tweaks below those imports. See ./README.md for
+ * how to reuse this on the main CNTUG website.
  */
 
-/* You can override the default Infima variables here. */
-:root {
-  --ifm-color-primary: #0086ff;
-  --ifm-color-primary-dark: #0079e6;
-  --ifm-color-primary-darker: #0072d9;
-  --ifm-color-primary-darkest: #005eb3;
-  --ifm-color-primary-light: #1a92ff;
-  --ifm-color-primary-lighter: #2698ff;
-  --ifm-color-primary-lightest: #4daaff;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-}
-
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #93eaff;
-  --ifm-color-primary-dark: #6be2ff;
-  --ifm-color-primary-darker: #57deff;
-  --ifm-color-primary-darkest: #1ad3ff;
-  --ifm-color-primary-light: #bbf2ff;
-  --ifm-color-primary-lighter: #cff6ff;
-  --ifm-color-primary-lightest: #ffffff;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-}
-
-.button--sponsor {
-  --ifm-color-primary: #d03592;
-  --ifm-color-primary-dark: #bf2c84;
-  --ifm-color-primary-darker: #b42a7d;
-  --ifm-color-primary-darkest: #942267;
-  --ifm-color-primary-light: #d54a9d;
-  --ifm-color-primary-lighter: #d755a3;
-  --ifm-color-primary-lightest: #df75b4;
-}
-
-[data-theme='dark'] .button--sponsor {
-  --ifm-color-primary: #ea4aaa;
-  --ifm-color-primary-dark: #e72e9d;
-  --ifm-color-primary-darker: #e52197;
-  --ifm-color-primary-darkest: #c1167d;
-  --ifm-color-primary-light: #ed66b7;
-  --ifm-color-primary-lighter: #ef73bd;
-  --ifm-color-primary-lightest: #f49dd1;
-}
+@import "./cntug-tokens.css";
+@import "./cntug-infima.css";
