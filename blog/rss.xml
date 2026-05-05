@@ -4,7 +4,7 @@
         <title>CNTUG Infra Labs 說明文件 Blog</title>
         <link>https://docs.cloudnative.tw/blog</link>
         <description>CNTUG Infra Labs 說明文件 Blog</description>
-        <lastBuildDate>Wed, 08 Apr 2026 17:03:17 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 05 May 2026 01:58:35 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh-Hant-TW</language>
@@ -12,7 +12,7 @@
             <title><![CDATA[CNTUG Infra Labs 2025 Recap]]></title>
             <link>https://docs.cloudnative.tw/blog/2025-recap</link>
             <guid>https://docs.cloudnative.tw/blog/2025-recap</guid>
-            <pubDate>Wed, 08 Apr 2026 17:03:17 GMT</pubDate>
+            <pubDate>Tue, 05 May 2026 01:58:35 GMT</pubDate>
             <description><![CDATA[營運概況]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="營運概況">營運概況<a href="https://docs.cloudnative.tw/blog/2025-recap#%E7%87%9F%E9%81%8B%E6%A6%82%E6%B3%81" class="hash-link" aria-label="營運概況的直接連結" title="營運概況的直接連結" translate="no">​</a></h2>
 <p>本年度整體營運維持穩定。在基礎建設維運方面，雖然部分月份面臨電力限制的挑戰，但我們仍持續優化系統環境。軟體部分，我們已順利將 OpenStack 升級至 2025.2 版本，Ceph 升級至 Tentacle 20.2.0，Host OS 亦同步升級至 Debian 13，以確保系統的安全性與效能。</p>
