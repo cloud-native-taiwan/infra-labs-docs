@@ -24,35 +24,35 @@
   font-family: "Clarity City";
   font-weight: 400;
   font-style: normal;
-  src: url("https://cdn.jsdelivr.net/npm/@clr/ui@17.12.2/dist/Regular/ClarityCityRegular.woff2") format("woff2");
+  src: url("https://cdn.jsdelivr.net/npm/@clr/city@1.1.0/Webfonts/WOFF2/ClarityCity-Regular.woff2") format("woff2");
   font-display: swap;
 }
 @font-face {
   font-family: "Clarity City";
   font-weight: 500;
   font-style: normal;
-  src: url("https://cdn.jsdelivr.net/npm/@clr/ui@17.12.2/dist/Medium/ClarityCityMedium.woff2") format("woff2");
+  src: url("https://cdn.jsdelivr.net/npm/@clr/city@1.1.0/Webfonts/WOFF2/ClarityCity-Medium.woff2") format("woff2");
   font-display: swap;
 }
 @font-face {
   font-family: "Clarity City";
   font-weight: 600;
   font-style: normal;
-  src: url("https://cdn.jsdelivr.net/npm/@clr/ui@17.12.2/dist/SemiBold/ClarityCitySemiBold.woff2") format("woff2");
+  src: url("https://cdn.jsdelivr.net/npm/@clr/city@1.1.0/Webfonts/WOFF2/ClarityCity-SemiBold.woff2") format("woff2");
   font-display: swap;
 }
 @font-face {
   font-family: "Clarity City";
   font-weight: 700;
   font-style: normal;
-  src: url("https://cdn.jsdelivr.net/npm/@clr/ui@17.12.2/dist/Bold/ClarityCityBold.woff2") format("woff2");
+  src: url("https://cdn.jsdelivr.net/npm/@clr/city@1.1.0/Webfonts/WOFF2/ClarityCity-Bold.woff2") format("woff2");
   font-display: swap;
 }
 @font-face {
   font-family: "Clarity City";
   font-weight: 800;
   font-style: normal;
-  src: url("https://cdn.jsdelivr.net/npm/@clr/ui@17.12.2/dist/ExtraBold/ClarityCityExtraBold.woff2") format("woff2");
+  src: url("https://cdn.jsdelivr.net/npm/@clr/city@1.1.0/Webfonts/WOFF2/ClarityCity-ExtraBold.woff2") format("woff2");
   font-display: swap;
 }
 
