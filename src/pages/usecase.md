@@ -30,3 +30,4 @@ title: Use cases 使用案例
 - [CNCF DevStats Card](https://github.com/tico88612/devstats-card)
 - [新世紀維運戰士：30 天用 Service Mesh 對抗 Kubernetes 使徒](https://ithelp.ithome.com.tw/users/20178725/ironman/8654)
 - [CNCF Infra Labs 如何成為我們貢獻開源的一股力量](https://www.facebook.com/share/p/17VsALY6qJ/)
+- [KCD Taipei 2025 Workshop Demo Environment](https://community2.cncf.io/events/details/cncf-kcd-taiwan-presents-kcd-taipei-2025/)
