@@ -13,3 +13,4 @@ sidebar_label: "維運"
 - [災難復原](disaster-recovery.md) -- 備份清單、復原情境及 RTO/RPO 考量。
 - [監控與可觀測性](monitoring-gaps.md) -- 現有監控堆疊、已識別的缺口及改善路線圖。
 - [容量規劃](capacity-planning.md) -- 目前的資源清單（運算、儲存、網路）、使用率及擴展選項。
+- [資源計價方式](resource-pricing.md) -- 各項資源的計價邏輯、費率決策依據（顯示計費）及費率調整流程。
