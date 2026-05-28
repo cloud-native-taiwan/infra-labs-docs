@@ -23,6 +23,7 @@ sidebar_position: 2
 | Designate | dns | `https://openstack.cloudnative.tw:9001` | `http://192.168.113.252:9001` |
 | Octavia | load-balancer | `https://openstack.cloudnative.tw:9876` | `http://192.168.113.252:9876` |
 | Placement | placement | `https://openstack.cloudnative.tw:8780` | `http://192.168.113.252:8780` |
+| CloudKitty | rating | `https://openstack.cloudnative.tw:8889` | `http://192.168.113.252:8889` |
 | Skyline | panel | `https://openstack.cloudnative.tw:9998` | `http://192.168.113.252:9998` |
 
 ## 備註
@@ -31,6 +32,8 @@ sidebar_position: 2
 - 所有內部端點使用 API VIP（192.168.113.252）上的純 HTTP，經由 VLAN 1113。
 - Swift 端點由 Ceph RADOS Gateway（RGW）提供，支援 S3 相容及 Swift 相容的物件儲存。
 - Skyline 為儀表板 UI，取代 Horizon。
+- CloudKitty（`rating`）提供資源計價（rating），為每月的 **顯示計費（showback）** 報表計算成本；其計價資料儲存於 OpenSearch（見[控制平面](control-plane.md#opensearch)）。計價邏輯與費率詳見[資源計價方式](../operations/resource-pricing.md)。
+- 內部端點埠號為 Kolla-Ansible 預設值；若有自訂 `*_api_port`，請以實際 Keystone 目錄為準（`openstack endpoint list`）。
 - Region：**RegionOne**（單一 region 部署）。
 
 ## 服務相依性圖
@@ -48,6 +51,8 @@ graph TD
     Octavia["Octavia<br/>(load-balancer)"]
     Placement["Placement"]
     Skyline["Skyline<br/>(dashboard)"]
+    CloudKitty["CloudKitty<br/>(rating)"]
+    OpenSearch["OpenSearch<br/>(rating storage)"]
 
     Nova --> KS
     Nova --> Neutron
@@ -70,6 +75,11 @@ graph TD
     Octavia --> Nova
     Skyline --> KS
     Placement --> KS
+    CloudKitty --> KS
+    CloudKitty -->|查詢 flavor| Nova
+    CloudKitty -.->|計價資料儲存| OpenSearch
 ```
+
+> OpenSearch 為後端資料儲存（datastore），並非註冊於 Keystone 目錄的服務，故以虛線表示。
 
 所有服務皆透過 Keystone 進行驗證。Nova 是關聯性最高的服務，依賴 Neutron 提供網路、Glance 提供映像檔、Cinder 提供磁碟區，以及 Placement 進行資源追蹤。

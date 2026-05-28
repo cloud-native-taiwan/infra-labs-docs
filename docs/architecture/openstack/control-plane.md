@@ -102,6 +102,16 @@ graph TD
 - **Sentinel**：為 Valkey 實例提供自動故障轉移
 - 運行於控制節點，處理 session 與快取資料
 
+### OpenSearch
+
+- **節點**：openstack01、openstack02、openstack04（隨控制平面分散於三個控制節點）
+- **用途**：CloudKitty（`rating` 服務）計價資料的儲存後端。Kolla-Ansible 2026.1 移除了 influxdb 部署，OpenSearch 取而代之成為 CloudKitty 的 storage v2 後端
+- **內部端點**：`http://192.168.113.252:9200`
+- **OpenSearch Dashboards**：已部署，僅限內部存取（未對外公開）
+- 計價的細節（費率、計算方式、顯示計費政策）詳見[資源計價方式](../operations/resource-pricing.md)
+
+> 目前 OpenSearch 僅供 CloudKitty 計價資料使用；Kolla 的 central logging 尚未啟用，故 Fluentd 日誌尚未匯入此叢集（見[監控與可觀測性](../operations/monitoring-gaps.md)）。
+
 ## Quorum 需求
 
 所有叢集服務（MariaDB Galera、RabbitMQ、OVN NB/SB 資料庫）皆使用 quorum 模型，要求多數節點可用：

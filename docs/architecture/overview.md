@@ -21,6 +21,7 @@ Infra Labs 為 CNTUG（Cloud Native Taiwan User Group）成員提供社群基礎
 | 網路（實體） | Arista DCS-7060CX-32S（核心）、Juniper NFX250（邊界） | BGP、VLAN trunking、100G 上行鏈路 |
 | 管理交換器 | Juniper EX3300-48T | 帶外管理及 IPMI 存取 |
 | 運算架構 | x86_64 | 所有伺服器皆使用 AMD EPYC 或 Intel Xeon 處理器 |
+| 計價（顯示計費） | CloudKitty | 計算各專案的資源成本以產生顯示計費報表；計價資料儲存於 OpenSearch |
 
 ---
 
@@ -137,6 +138,20 @@ Infra Labs 採用 IPv4 與 IPv6 dual stack。
 - 原生支援分散式路由器、ACL 及 DHCP。
 - 在 OVS 專案下積極進行上游開發。
 - 以更簡潔的架構取代舊版 ML2/OVS agent。
+
+---
+
+### 決策 5：為何導入 CloudKitty 顯示計費
+
+**背景：** Infra Labs 是免費提供的社群資源，缺乏成本意識容易導致閒置 VM 長期佔用稀缺的運算資源。平台需要一種機制讓使用者看見其用量的真實價值，但又不應變成真正的收費系統。
+
+**決策：** 部署 CloudKitty（`rating` 服務），以 OpenSearch 為儲存後端，產生每月的 **顯示計費（showback）** 報表——只計價、不請款。
+
+**理由：**
+- 顯示計費能凸顯免費基礎設施的真實價值，並溫和地鼓勵清理閒置資源，而不引入金流或計費的負擔。
+- CloudKitty 為 OpenStack 原生計價服務，可直接取用既有的 Keystone、Nova 及 Prometheus 資料。
+- Kolla-Ansible 2026.1 移除 influxdb 後，OpenSearch 為其支援的 storage v2 後端，且可與未來的集中式日誌共用同一套叢集。
+- 費率錨定於平價雲端水準（無 SLA），詳見[資源計價方式](operations/resource-pricing.md)。
 
 ---
 
