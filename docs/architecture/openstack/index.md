@@ -9,6 +9,8 @@ Infra Labs 透過 **Kolla-Ansible** 部署 OpenStack，所有服務皆以 Docker
 
 網路部分採用 **OVN**（Open Virtual Network）作為 ML2 mechanism driver，提供分散式虛擬路由、安全群組，以及透過 Geneve 隧道實現的 overlay 網路。
 
+資源計價由 **CloudKitty**（`rating` 服務）負責，以 **OpenSearch** 為儲存後端，產生每月的顯示計費（showback）報表。計價邏輯與費率詳見[資源計價方式](../operations/resource-pricing.md)。
+
 ## 子頁面
 
 - [控制平面與高可用性](control-plane.md) -- HA 架構、叢集服務、quorum 需求
