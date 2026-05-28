@@ -98,6 +98,7 @@ const sidebars = {
         'architecture/operations/disaster-recovery',
         'architecture/operations/monitoring-gaps',
         'architecture/operations/capacity-planning',
+        'architecture/operations/resource-pricing',
       ],
     },
     {
