@@ -36,3 +36,9 @@
 - d2: AMD Epyc Milan 7413 CPU
 
 由於指令集的不同，a1 系列 VM 需使用 aarch64 結尾的 OS。
+
+## GPU
+
+Infra Labs 有數量有限的 GPU，需要的人可以申請。目前有 NVIDIA RTX A5000、Tesla T10 和 Intel Arc Pro B50，可用型號與計價方式列在[資源計價](../architecture/operations/resource-pricing.md)。
+
+申請請寄信到 [infra@cloudnative.tw](mailto:infra@cloudnative.tw)，說明用途和大概的使用時間。
