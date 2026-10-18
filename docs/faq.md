@@ -36,6 +36,12 @@ sidebar_position: 4
 請先在電腦安裝 SSH Client 程式，並搭配 SSH Public Key 進行連接。
 請注意，在預設情況下，我們不開放透過 Password 連入。
 
+## GPU
+
+> Q: 可以申請 GPU 嗎？
+
+可以，Infra Labs 有數量有限的 GPU。型號、計價和申請方式見[建立 VM](tutorial-basics/create-vm.md#gpu)頁的 GPU 一節。
+
 ## 網路
 
 > Q: 我沒辦法連上我 VM 的一些連接埠 (Port)，請問是什麼問題？
