@@ -97,7 +97,7 @@ Outage 的部分不乏幾個蠻有趣的：
 - Building Kubernetes cluster the hard way
     - [影片](https://www.youtube.com/watch?v=YexUnVOZC8M&t=17837s)
 - 2022 iThome 鐵人賽《關於我怎麼把一年內學到的新手 IT/SRE 濃縮到 30 天筆記這檔事》
-    - [Jerry Yang's Blog](https://blog.yangjerry.tw/categories/IT-%E9%90%B5%E4%BA%BA%E8%B3%BD/2022/)
+    - [Jerry Yang's Blog](https://blog.yangjerry.tw/tags/14th-%E9%90%B5%E4%BA%BA%E8%B3%BD/)
     - [iThome](https://ithelp.ithome.com.tw/users/20112934/ironman/5640)
 - [2022 iThome 鐵人賽《5G 核心網路與雲原生開發之亂彈阿翔》](https://ithelp.ithome.com.tw/articles/10306986)
 - [UniCourse 大學課程資訊交流平臺](https://github.com/cloud-native-taiwan/Infra-Labs-Docs/blob/main/unicourse.tw)

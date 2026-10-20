@@ -6,7 +6,7 @@ sidebar_position: 1
 
 Openstack 連結：[https://openstack.cloudnative.tw](https://openstack.cloudnative.tw)
 
-Jerry 在部落格上撰寫了一些使用的相關心得，也可以參考其撰寫的內容 [Jerry Yang's Blog](https://blog.yangjerry.tw/categories/IT-%E9%90%B5%E4%BA%BA%E8%B3%BD/2022/)
+Jerry 在部落格上撰寫了一些使用的相關心得，也可以參考其撰寫的內容 [Jerry Yang's Blog](https://blog.yangjerry.tw/tags/14th-%E9%90%B5%E4%BA%BA%E8%B3%BD/)
 
 ## 登入系統並更換密碼
 
