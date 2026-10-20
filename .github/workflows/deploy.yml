@@ -21,7 +21,10 @@ jobs:
     if: github.repository_owner == 'cloud-native-taiwan'
     timeout-minutes: 15
     steps:
+      # Don't keep the token in git config; the deploy step is given github_token directly.
       - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
       - uses: actions/setup-node@v7
         with:
           node-version: 22
