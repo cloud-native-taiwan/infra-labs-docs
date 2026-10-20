@@ -31,3 +31,4 @@ title: Use cases 使用案例
 - [新世紀維運戰士：30 天用 Service Mesh 對抗 Kubernetes 使徒](https://ithelp.ithome.com.tw/users/20178725/ironman/8654)
 - [CNCF Infra Labs 如何成為我們貢獻開源的一股力量](https://www.facebook.com/share/p/17VsALY6qJ/)
 - [KCD Taipei 2025 Workshop Demo Environment](https://kcd-taipei-2025.sessionize.com/schedule)
+- [Understanding dynamic resource allocation in Kubernetes](https://www.cncf.io/blog/2026/07/01/understanding-dynamic-resource-allocation-in-kubernetes/)
