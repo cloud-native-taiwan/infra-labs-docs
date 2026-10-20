@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknew_infra_labs_docs=self.webpackChunknew_infra_labs_docs||[]).push([["819"],{75390(e,s,c){c.d(s,{createArchitectureServices:()=>a.S});var a=c(65530);c(93345)}}]);
