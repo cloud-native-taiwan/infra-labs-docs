@@ -14,6 +14,21 @@ const config = {
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
 
+  // Opt into Docusaurus Faster (SWC + Lightning CSS + Rspack) for faster builds.
+  // ssgWorkerThreads stays off: in 3.9.2 it needs the v4 head-tag cleanup, which we have not enabled.
+  future: {
+    experimental_faster: {
+      swcJsLoader: true,
+      swcJsMinimizer: true,
+      swcHtmlMinimizer: true,
+      lightningCssMinimizer: true,
+      rspackBundler: true,
+      rspackPersistentCache: true,
+      mdxCrossCompilerCache: true,
+      ssgWorkerThreads: false,
+    },
+  },
+
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'cloud-native-taiwan', // Usually your GitHub org/user name.
